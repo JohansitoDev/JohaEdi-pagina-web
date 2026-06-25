@@ -1,47 +1,46 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Navbar from './components/Navbar.vue'
+import Hero from './components/Hero.vue'
+import TechFeatures from './components/TechFeatures.vue'
+import ContributeInstall from './components/ContributeInstall.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="bg-hacker-bg text-hacker-text min-h-screen antialiased selection:bg-hacker-neon selection:text-black">
+    <Navbar />
+    
+    <main>
+      <Hero />
+      <TechFeatures />
+      <ContributeInstall />
+    </main>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <footer class="border-t border-hacker-border/40 py-8 bg-black text-center text-xs text-gray-600 font-mono">
+      <p>JohaEdi Core &copy; 2026. Diseñado y Desarrollado por Johan Mancebo.</p>
+      <p class="mt-1 text-hacker-border">Código fuente disponible públicamente en mi cuenta oficial de GitHub.</p>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+
+:root {
+  --hacker-bg: #050a05;
+  --hacker-card: #0a140a;
+  --hacker-border: #1f5f0f;
+  --hacker-neon: #39ff14;
+  --hacker-text: #b0e0b0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+body {
+  background-color: var(--hacker-bg);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+.bg-hacker-bg { background-color: var(--hacker-bg); }
+.bg-hacker-card { background-color: var(--hacker-card); }
+.border-hacker-border { border-color: var(--hacker-border); }
+.border-hacker-neon { border-color: var(--hacker-neon); }
+.text-hacker-neon { color: var(--hacker-neon); }
+.text-hacker-text { color: var(--hacker-text); }
 </style>
